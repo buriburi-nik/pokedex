@@ -463,7 +463,7 @@
             Promise.all(promises)
                 .then(allPokemon => {
                     const firstGenPokemon = allPokemon.map(pokemon => ({
-                        frontImage: pokemon.sprites['front_default'],
+                        frontImage: pokemon.sprites['front_default'], backImage: pokemon.sprites['back_default'],
                         pokemon_id: pokemon.id,
                         name: pokemon.name,
                         type: pokemon.types[0].type.name,
@@ -533,7 +533,7 @@
             backCard.classList.add('back-pokemon-card');
 
             const backImage = document.createElement('img');
-            backImage.src = `${pokemon.frontImage}`;
+            backImage.src = `${pokemon.backImage}`;
             backImage.classList.add("back-pokemon-image");
 
             const backPokeID = document.createElement('p');
